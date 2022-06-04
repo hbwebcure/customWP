@@ -1,0 +1,95 @@
+
+@mixin underline {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -4px;
+}
+
+@mixin media-query($constraint, $size1, $size2: null) {
+
+    @if $constraint == $min {
+        @media screen and ($min: $size1) {
+            @content
+        }
+    } @else if $constraint == $max {
+        @media screen and ($max: $size1) {
+          @content;
+        }
+    } @else {
+        @media screen and ($min: $size1) and ($max: $size2) {
+          @content;
+        }
+    }    
+}
+
+@mixin overlay {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: $basic-transition;
+    z-index: -1;
+}
+
+@mixin square-icon {
+    border: 1px solid rgba(#000, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    width: 56px;
+    margin-bottom: 1rem;
+    transition: $basic-transition;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    &::after {
+        @include overlay;
+        background: #000;
+        top: 100%;
+        left: 0;
+    }
+    &:hover {
+        cursor: pointer;
+        svg {
+            path {
+                z-index: 1;
+                fill: #fff;
+            }
+        }
+        &::after {
+            top: 0;
+        }
+    }
+    svg {
+        z-index: 1;
+        position: absolute;
+        path {
+            transition: $basic-transition;
+        }
+    }
+}
+
+$basic-transition: all .3s ease-out;
+
+$orange: #F06414;
+$gray: #838383;
+
+
+$desktop: 1550px;
+$laptop: 1200px;
+$notebook: 992px;
+$tablet: 768px;
+$phone: 576px;
+$min: min-width;
+$max: max-width;
+$max-height: max-height;
+
+$wrapper-padding: 80px;
+$section-spacing: 160px;
+$card-border: 1px solid rgba(#fff, 0.5);
