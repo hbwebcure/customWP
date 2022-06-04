@@ -1,0 +1,45 @@
+/*!
+Theme Name: CBD
+Theme URI: https://www.cbwebsitedesign.co.uk/
+Author: Creative Brand Design
+Author URI: https://www.cbwebsitedesign.co.uk/
+Description: Creative Brand Design
+Version: 2.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: cbd
+*/
+@import 'css/main.css';
+._page {
+    padding-top: 250px;
+    padding-bottom: 200px;
+}
+footer {
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+._bc a.button-outlined {
+    display: inline-block;
+}
+@media (min-width: 768px) {
+    section.partners-list .single-partner:nth-of-type(2),
+    section.partners-list .single-partner:nth-of-type(5),
+    section.partners-list .single-partner:nth-of-type(8),
+    section.partners-list .single-partner:nth-of-type(11),
+    section.partners-list .single-partner:nth-of-type(14),
+    section.partners-list .single-partner:nth-of-type(17) {
+        border-left: none;
+        border-right: none;
+    }
+}
+.gform_wrapper textarea {
+    height: 130px !important;
+}
+.page-template-pge-template-contact .gform_wrapper .top_label li.gfield.gf_left_half,
+.page-template-pge-template-contact .gform_wrapper .top_label li.gfield.gf_right_half,
+.page-template-pge-template-contact .gform_wrapper ul.gform_fields li.gfield {
+    padding-right: 0;
+}
+.gform_wrapper li.hidden_label input {
+    padding: 1rem !important;
+}
